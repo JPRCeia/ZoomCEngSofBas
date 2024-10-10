@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "lib_ppm.h"
+#include "lib.ppm.h"
 
 
 int read_ppm(char *file, struct image_s *image)

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "lib_ppm.h"
+#include "lib.ppm.h"
 
 void paintRedPixels(struct image_s *image_copy, int original_x, int original_y, int color_value);
 void paintGreenPixels(struct image_s *image_copy, int original_x, int original_y, int color_value);
@@ -33,7 +33,7 @@ int main()
 
     processPixels(image_original, image_copy);
 
-    if (write_ppm("lena_copy.ppm", image_copy) != 0) {
+    if (write_ppm("lena.copy.ppm", image_copy) != 0) {
         fprintf(stderr, "Erro \n");
     }
 
