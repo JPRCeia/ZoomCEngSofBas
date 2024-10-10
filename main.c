@@ -19,23 +19,9 @@ int main()
 
     int r_original = read_ppm("lena.ppm", image_original);
 
-    if (r_original != 0) {
-        fprintf(stderr, "Erro\n");
-        return 1;
-    }
-
     int r_copy = createImageCopy(image_original, image_copy);
-    if (r_copy != 0) {
-        fprintf(stderr, "Erro\n");
-        free_ppm(image_original);
-        return 1;
-    }
 
     processPixels(image_original, image_copy);
-
-    if (write_ppm("lena.copy.ppm", image_copy) != 0) {
-        fprintf(stderr, "Erro \n");
-    }
 
     cleanup(image_original, image_copy);
 
@@ -61,7 +47,6 @@ void cleanup(struct image_s *image_original, struct image_s *image_copy) {
     free_ppm(image_original);
     free_ppm(image_copy);
 }
-
 
 void paintRedPixels(struct image_s *image_copy, int original_x, int original_y, int color_value)
 {
